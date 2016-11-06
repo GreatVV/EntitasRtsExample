@@ -11,6 +11,7 @@ public class InitSystem : IInitializeSystem, ISetPool
         {
             InitForPlayer(i, levelDescription.Players[i]);
         }
+        _pool.SetCurrentPlayer(0);
     }
 
     private void InitForPlayer(int i, PlayerDescription playerDescription)

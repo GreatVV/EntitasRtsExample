@@ -18,7 +18,7 @@ public class Regeneration : IComponent
 
 public class Player : IComponent
 {
-    public int Number;
+    public int Id;
 }
 
 public class Building : IComponent
@@ -34,4 +34,9 @@ public class Sword : IComponent
 public class Axe : IComponent
 {
     
+}
+
+public class Damage : IComponent
+{
+    public float Value;
 }

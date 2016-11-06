@@ -10,13 +10,18 @@ public class SpawnSystem : IReactiveSystem, ISetPool
     {
         foreach (var entity in entities)
         {
+            if (entity.player.Id != _pool.currentPlayer.Id)
+            {
+                continue;
+            }
+
             var prefab = entity.prefab.Value;
             var instance = Object.Instantiate(prefab.gameObject);
             instance.transform.position = entity.spawnPoint.Value;
             var components = instance.GetComponentsInChildren<IPlayerInitable>();
             foreach (var playerInitable in components)
             {
-                playerInitable.Init(_pool, entity.player.Number);
+                playerInitable.Init(_pool, entity.player.Id);
             }
             entity.isClick = false;
         }

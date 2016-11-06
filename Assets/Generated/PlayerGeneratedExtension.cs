@@ -13,15 +13,15 @@ namespace Entitas {
         public Player player { get { return (Player)GetComponent(ComponentIds.Player); } }
         public bool hasPlayer { get { return HasComponent(ComponentIds.Player); } }
 
-        public Entity AddPlayer(int newNumber) {
+        public Entity AddPlayer(int newId) {
             var component = CreateComponent<Player>(ComponentIds.Player);
-            component.Number = newNumber;
+            component.Id = newId;
             return AddComponent(ComponentIds.Player, component);
         }
 
-        public Entity ReplacePlayer(int newNumber) {
+        public Entity ReplacePlayer(int newId) {
             var component = CreateComponent<Player>(ComponentIds.Player);
-            component.Number = newNumber;
+            component.Id = newId;
             ReplaceComponent(ComponentIds.Player, component);
             return this;
         }

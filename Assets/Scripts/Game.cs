@@ -33,8 +33,10 @@ public class Game : MonoBehaviour
         return new Feature("Game")
             
             .Add(pools.pool.CreateSystem(new InitSystem(), pools))
+            .Add(pools.pool.CreateSystem(new UnitSelectSystem(), pools))
             .Add(pools.pool.CreateSystem(new ControlSystems(), pools))
             .Add(pools.pool.CreateSystem(new SpawnSystem(), pools))
+            .Add(pools.pool.CreateSystem(new AISystem(), pools))
             .Add(pools.pool.CreateSystem(new DestroySystem(), pools))
             ;
     }

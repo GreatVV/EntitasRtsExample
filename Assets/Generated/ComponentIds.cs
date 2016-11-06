@@ -11,25 +11,34 @@ public static class ComponentIds {
     public const int Axe = 0;
     public const int Building = 1;
     public const int Click = 2;
-    public const int Destroy = 3;
-    public const int Health = 4;
-    public const int LevelDescription = 5;
-    public const int Player = 6;
-    public const int Position = 7;
-    public const int Prefab = 8;
-    public const int Regeneration = 9;
-    public const int Select = 10;
-    public const int SpawnPoint = 11;
-    public const int Sword = 12;
-    public const int Unit = 13;
+    public const int CurrentPlayer = 3;
+    public const int CurrentTick = 4;
+    public const int Damage = 5;
+    public const int Destroy = 6;
+    public const int GameObject = 7;
+    public const int Health = 8;
+    public const int LevelDescription = 9;
+    public const int Player = 10;
+    public const int Position = 11;
+    public const int Prefab = 12;
+    public const int Regeneration = 13;
+    public const int Select = 14;
+    public const int SpawnPoint = 15;
+    public const int Sword = 16;
+    public const int Tick = 17;
+    public const int Unit = 18;
 
-    public const int TotalComponents = 14;
+    public const int TotalComponents = 19;
 
     public static readonly string[] componentNames = {
         "Axe",
         "Building",
         "Click",
+        "CurrentPlayer",
+        "CurrentTick",
+        "Damage",
         "Destroy",
+        "GameObject",
         "Health",
         "LevelDescription",
         "Player",
@@ -39,6 +48,7 @@ public static class ComponentIds {
         "Select",
         "SpawnPoint",
         "Sword",
+        "Tick",
         "Unit"
     };
 
@@ -46,7 +56,11 @@ public static class ComponentIds {
         typeof(Axe),
         typeof(Building),
         typeof(Click),
+        typeof(CurrentPlayer),
+        typeof(CurrentTick),
+        typeof(Damage),
         typeof(Destroy),
+        typeof(GameObjectComponent),
         typeof(Health),
         typeof(LevelDescriptionComponent),
         typeof(Player),
@@ -56,6 +70,7 @@ public static class ComponentIds {
         typeof(Select),
         typeof(SpawnPoint),
         typeof(Sword),
+        typeof(Tick),
         typeof(Unit)
     };
 }
