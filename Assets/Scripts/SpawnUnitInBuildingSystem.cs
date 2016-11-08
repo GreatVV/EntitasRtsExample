@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using Entitas;
 using UnityEngine;
 
-public class SpawnSystem : IReactiveSystem, ISetPool
+public class SpawnUnitInBuildingSystem : IReactiveSystem, ISetPool
 {
     private Pool _pool;
 
@@ -10,11 +10,6 @@ public class SpawnSystem : IReactiveSystem, ISetPool
     {
         foreach (var entity in entities)
         {
-            if (entity.player.Id != _pool.currentPlayer.Id)
-            {
-                continue;
-            }
-
             var prefab = entity.prefab.Value;
             var instance = Object.Instantiate(prefab.gameObject);
             instance.transform.position = entity.spawnPoint.Value;
@@ -22,14 +17,15 @@ public class SpawnSystem : IReactiveSystem, ISetPool
             foreach (var playerInitable in components)
             {
                 playerInitable.Init(_pool, entity.player.Id);
+                playerInitable.Entity.isAiControlled = entity.isAiControlled;
             }
-            entity.isClick = false;
+            entity.isNeedSpawn = false;
         }
     }
 
     public TriggerOnEvent trigger
     {
-        get { return Matcher.AllOf(Matcher.Building, Matcher.Click, Matcher.Prefab, Matcher.Player, Matcher.SpawnPoint).OnEntityAdded(); }
+        get { return Matcher.AllOf(Matcher.NeedSpawn, Matcher.Building).OnEntityAdded(); }
     }
 
     public void SetPool(Pool pool)

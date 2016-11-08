@@ -8,29 +8,35 @@
 //------------------------------------------------------------------------------
 public static class ComponentIds {
 
-    public const int Axe = 0;
-    public const int Building = 1;
-    public const int Click = 2;
-    public const int CurrentPlayer = 3;
-    public const int CurrentTick = 4;
-    public const int Damage = 5;
-    public const int Destroy = 6;
-    public const int GameObject = 7;
-    public const int Health = 8;
-    public const int LevelDescription = 9;
-    public const int Player = 10;
-    public const int Position = 11;
-    public const int Prefab = 12;
-    public const int Regeneration = 13;
-    public const int Select = 14;
-    public const int SpawnPoint = 15;
-    public const int Sword = 16;
-    public const int Tick = 17;
-    public const int Unit = 18;
+    public const int AiControlled = 0;
+    public const int AttackRadius = 1;
+    public const int Axe = 2;
+    public const int Building = 3;
+    public const int Click = 4;
+    public const int CurrentPlayer = 5;
+    public const int CurrentTick = 6;
+    public const int Damage = 7;
+    public const int Destroy = 8;
+    public const int GameObject = 9;
+    public const int Health = 10;
+    public const int LevelDescription = 11;
+    public const int NeedSpawn = 12;
+    public const int Player = 13;
+    public const int Position = 14;
+    public const int Prefab = 15;
+    public const int PreviousHealth = 16;
+    public const int Regeneration = 17;
+    public const int Select = 18;
+    public const int SpawnPoint = 19;
+    public const int Sword = 20;
+    public const int Tick = 21;
+    public const int Unit = 22;
 
-    public const int TotalComponents = 19;
+    public const int TotalComponents = 23;
 
     public static readonly string[] componentNames = {
+        "AiControlled",
+        "AttackRadius",
         "Axe",
         "Building",
         "Click",
@@ -41,9 +47,11 @@ public static class ComponentIds {
         "GameObject",
         "Health",
         "LevelDescription",
+        "NeedSpawn",
         "Player",
         "Position",
         "Prefab",
+        "PreviousHealth",
         "Regeneration",
         "Select",
         "SpawnPoint",
@@ -53,6 +61,8 @@ public static class ComponentIds {
     };
 
     public static readonly System.Type[] componentTypes = {
+        typeof(AiControlled),
+        typeof(AttackRadius),
         typeof(Axe),
         typeof(Building),
         typeof(Click),
@@ -63,9 +73,11 @@ public static class ComponentIds {
         typeof(GameObjectComponent),
         typeof(Health),
         typeof(LevelDescriptionComponent),
+        typeof(NeedSpawn),
         typeof(Player),
         typeof(Position),
         typeof(PrefabComponent),
+        typeof(PreviousHealth),
         typeof(Regeneration),
         typeof(Select),
         typeof(SpawnPoint),

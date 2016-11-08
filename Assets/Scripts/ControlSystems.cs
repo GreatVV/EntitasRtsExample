@@ -27,7 +27,7 @@ public class ControlSystems : IReactiveSystem, ISetPool
 
     public TriggerOnEvent trigger
     {
-        get { return Matcher.AllOf(Matcher.Click, Matcher.Position).OnEntityAdded(); }
+        get { return Matcher.AllOf(Matcher.Click, Matcher.Position).NoneOf(Matcher.Unit).OnEntityAdded(); }
     }
 
     public void SetPool(Pool pool)
